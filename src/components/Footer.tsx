@@ -4,13 +4,36 @@ import { Facebook, Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import { site } from "@/lib/site";
 import { buildWhatsAppUrl, quickMessages } from "@/lib/whatsapp";
 
+const exploreCols: { heading: string; links: { href: string; label: string }[] }[] = [
+  {
+    heading: "Practice",
+    links: [
+      { href: "/services", label: "Services" },
+      { href: "/pujas", label: "Pujas" },
+      { href: "/jaaps", label: "Jaaps" },
+      { href: "/online-classes", label: "Online Classes" },
+      { href: "/membership", label: "Membership" },
+    ],
+  },
+  {
+    heading: "Learn",
+    links: [
+      { href: "/about", label: "About Guru Didi" },
+      { href: "/testimonials", label: "Stories of Grace" },
+      { href: "/books", label: "Books" },
+      { href: "/gallery", label: "Gallery" },
+      { href: "/faqs", label: "FAQs" },
+    ],
+  },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="mt-12 border-t border-saffron-200/50 bg-gradient-to-b from-cream to-cream-deep">
       <div className="container-wide py-14 sm:py-20">
-        <div className="grid gap-10 sm:gap-12 md:grid-cols-4">
-          <div className="md:col-span-2 max-w-md">
+        <div className="grid gap-10 sm:gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-1 max-w-md">
             <div className="flex items-center gap-3">
               <Image
                 src="/images/logo.png"
@@ -36,26 +59,28 @@ export function Footer() {
             </p>
           </div>
 
+          {exploreCols.map((col) => (
+            <div key={col.heading}>
+              <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
+                {col.heading}
+              </h4>
+              <ul className="mt-4 space-y-2 text-sm text-ink-soft">
+                {col.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="hover:text-saffron-700">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
-              Explore
+              Connect
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-              <li>
-                <Link href="/about" className="hover:text-saffron-700">
-                  About Guru Didi
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-saffron-700">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-saffron-700">
-                  Book a Consultation
-                </Link>
-              </li>
               <li>
                 <a
                   href={buildWhatsAppUrl(quickMessages.consultation)}
@@ -66,14 +91,6 @@ export function Footer() {
                   WhatsApp Guru Didi
                 </a>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
-              Contact
-            </h4>
-            <ul className="mt-4 space-y-2 text-sm text-ink-soft">
               <li>
                 <a
                   href={`tel:${site.contact.phoneRaw}`}
@@ -91,6 +108,11 @@ export function Footer() {
                   <Mail className="h-4 w-4 shrink-0" />
                   {site.contact.email}
                 </a>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-saffron-700">
+                  Contact form
+                </Link>
               </li>
             </ul>
             <div className="mt-5 flex items-center gap-3">

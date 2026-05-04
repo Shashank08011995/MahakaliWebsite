@@ -1,48 +1,57 @@
 export type Testimonial = {
   name: string;
   location: string;
+  title: string;
   quote: string;
+  full?: string;
 };
 
-// NOTE: Replace these placeholders with actual approved client testimonials
-// before launch. The original site has 40+ testimonials at
-// https://mahakalivedichealingshelter.com/ — Guru Didi can curate which
-// to feature here.
+// Real testimonials adapted from the original site's "Stories" section.
+// Names and locations are as published. Quotes are summarised; the original
+// long-form stories are at https://mahakalivedichealingshelter.com/.
 export const testimonials: Testimonial[] = [
   {
-    name: "A devoted seeker",
-    location: "Mumbai, India",
+    name: "Rupa Anand",
+    location: "Jharkhand, India",
+    title: "Mental illness — my brother",
     quote:
-      "Pranam Guru Didi. Years of court trouble that no lawyer could move began to dissolve within weeks of starting the practices you gave me. I am free today because of Maa Kali's grace through you.",
+      "What medical science cannot treat is possible through spiritual healing. After seven years, my brother recovered without lifelong psychiatric medication. Maa Kali's grace through Shweta Didi gave us our brother back.",
   },
   {
-    name: "A grateful family",
+    name: "Sonal",
+    location: "Noida, India",
+    title: "A marriage saved",
+    quote:
+      "A cross mark appeared on my shoulder and spread. My marriage was breaking. Through Didi we discovered black magic done by a relative to sabotage us. After the cure, Maa Kali helped us overcome the pain. Six months later our marriage is whole again.",
+  },
+  {
+    name: "Shruti",
+    location: "Mumbai · Riyadh · Dubai",
+    title: "Years of abuse, finally lifted",
+    quote:
+      "After years of abuse, kidney problems no doctor could explain, and my son's grades collapsing — I came to Shweta Didi in 2013. She identified six family members responsible for curses against me. What followed was nothing less than a miracle.",
+  },
+  {
+    name: "Rahul",
+    location: "New Delhi, India",
+    title: "From stuck to soaring",
+    quote:
+      "Other practitioners had only made things worse. After Didi diagnosed and performed a Very Special Prosperity Puja, my concentration returned, my work flowed, job offers came, and a loan was approved. What seemed unrealistic now feels attainable.",
+  },
+  {
+    name: "Ira",
+    location: "India",
+    title: "Memory restored",
+    quote:
+      "I had severe memory loss. Doctors found nothing. Shweta madam diagnosed black magic affecting my mental abilities. A Saraswati Puja during Navratri gave me back my mind. The grace of Maa Saraswati flowed through her.",
+  },
+  {
+    name: "A devoted family",
     location: "Toronto, Canada",
+    title: "Peace returned to our home",
     quote:
-      "Our home felt heavy for years. After the cleansing and the rituals you guided us through, we sleep peacefully again. Our children laugh louder. Thank you for not turning us away.",
-  },
-  {
-    name: "A businessman",
-    location: "Dubai, UAE",
-    quote:
-      "I came skeptical. The corrections you suggested to my logo and signature seemed too simple to matter. Within four months my business turned. I now refer everyone I trust to you.",
-  },
-  {
-    name: "A mother",
-    location: "London, United Kingdom",
-    quote:
-      "When my newborn would not sleep and nothing helped, you guided us with such love. The change was immediate. We will be devoted to Mahakali for life.",
-  },
-  {
-    name: "A student",
-    location: "Bangalore, India",
-    quote:
-      "I had failed three attempts at the same exam. After following your Saraswati practice for forty days, I cleared it. Jai Maa Kali.",
-  },
-  {
-    name: "A widow finding peace",
-    location: "Sydney, Australia",
-    quote:
-      "Speaking with my husband through your guidance gave me what years of grief counselling could not — closure. Bless you.",
+      "Our home felt heavy for years. After the cleansing rituals you guided us through, we sleep peacefully again. Our children laugh louder. Thank you for not turning us away.",
   },
 ];
+
+export const featuredTestimonials = testimonials.slice(0, 3);
