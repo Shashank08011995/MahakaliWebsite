@@ -3,12 +3,73 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --bg: #fff8f0;
+    --surface: #ffffff;
+    --surface-soft: #fff2e4;
+    --surface-strong: #f6e5d7;
+    --text: #2d2921;
+    --muted: #6f6459;
+    --accent: #c15f0f;
+    --accent-dark: #a94f08;
+    --accent-soft: #f7d0b1;
+    --accent-strong: #dc6f18;
+    --border: #f3d1b0;
+    --surface-rgb: 255, 248, 240;
+    --surface-soft-rgb: 251, 238, 219;
+    --accent-rgb: 193, 95, 15;
+    --border-rgb: 243, 209, 176;
+    --card: #ffffff;
+  }
+
+  .theme-teal {
+    --bg: #f4fffc;
+    --surface: #f8fffd;
+    --surface-soft: #dffaf5;
+    --surface-strong: #def4ee;
+    --text: #134041;
+    --muted: #405f5f;
+    --accent: #0f7c74;
+    --accent-dark: #0b5d58;
+    --accent-soft: #bcf1ed;
+    --accent-strong: #0a827d;
+    --border: #bce8e1;
+    --surface-rgb: 248, 255, 253;
+    --surface-soft-rgb: 223, 250, 245;
+    --accent-rgb: 15, 124, 116;
+    --border-rgb: 188, 232, 225;
+    --card: #ffffff;
+  }
+
+  .theme-indigo {
+    --bg: #f8fbff;
+    --surface: #f3f5ff;
+    --surface-soft: #e4ecff;
+    --surface-strong: #dde4ff;
+    --text: #172e4d;
+    --muted: #4b5e7f;
+    --accent: #4f46e5;
+    --accent-dark: #3730a3;
+    --accent-soft: #dde0ff;
+    --accent-strong: #3c3bb9;
+    --border: #dfe3ff;
+    --surface-rgb: 243, 245, 255;
+    --surface-soft-rgb: 228, 236, 255;
+    --accent-rgb: 79, 70, 229;
+    --border-rgb: 223, 227, 255;
+    --card: #ffffff;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-cream text-ink font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 200ms ease, color 200ms ease;
     font-feature-settings: "ss01", "cv02";
   }
 
@@ -16,11 +77,116 @@
   h2,
   h3,
   h4 {
-    @apply font-serif text-ink tracking-tight;
+    @apply font-serif tracking-tight;
+    color: var(--text);
   }
 
   ::selection {
-    @apply bg-marigold-200 text-ink;
+    background-color: var(--accent-soft);
+    color: var(--text);
+  }
+
+  .bg-cream {
+    background-color: var(--surface) !important;
+  }
+
+  .bg-cream-deep {
+    background-color: var(--surface-soft) !important;
+  }
+
+  .bg-cream-deep\/60 {
+    background-color: rgba(var(--surface-soft-rgb), 0.6) !important;
+  }
+
+  .bg-saffron-100 {
+    background-color: var(--accent-soft) !important;
+  }
+
+  .bg-saffron-400 {
+    background-color: var(--accent-strong) !important;
+  }
+
+  .bg-saffron-600 {
+    background-color: var(--accent) !important;
+  }
+
+  .bg-saffron-700 {
+    background-color: var(--accent-dark) !important;
+  }
+
+  .text-ink {
+    color: var(--text) !important;
+  }
+
+  .text-ink-soft,
+  .text-ink-muted {
+    color: var(--muted) !important;
+  }
+
+  .text-sindoor {
+    color: var(--accent) !important;
+  }
+
+  .text-sindoor-dark {
+    color: var(--accent-dark) !important;
+  }
+
+  .text-saffron-700 {
+    color: var(--accent-dark) !important;
+  }
+
+  .text-saffron-800 {
+    color: var(--accent-dark) !important;
+  }
+
+  .border-saffron-200 {
+    border-color: var(--border) !important;
+  }
+
+  .border-saffron-200\/60 {
+    border-color: rgba(var(--border-rgb), 0.6) !important;
+  }
+
+  .border-saffron-400 {
+    border-color: var(--accent) !important;
+  }
+
+  .border-saffron-400\/60 {
+    border-color: rgba(var(--accent-rgb), 0.35) !important;
+  }
+
+  .hover\:text-saffron-700:hover,
+  .hover\:text-saffron-800:hover {
+    color: var(--accent-dark) !important;
+  }
+
+  .bg-gradient-saffron {
+    background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 45%, var(--accent-soft) 100%) !important;
+  }
+
+  .ornament-divider {
+    background-image: linear-gradient(to right, transparent, var(--accent), transparent) !important;
+  }
+
+  .btn-primary {
+    background-color: var(--accent) !important;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-dark) !important;
+  }
+
+  .btn-secondary {
+    border-color: var(--accent-soft) !important;
+    color: var(--accent) !important;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent) !important;
+  }
+
+  .eyebrow {
+    color: var(--accent) !important;
   }
 }
 
@@ -34,11 +200,27 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-saffron-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-saffron-700 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-saffron-600;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    background-color: var(--accent);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-dark);
+  }
+
+  .btn-primary:focus-visible {
+    outline-color: var(--accent);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-saffron-600/40 bg-white/60 px-6 py-3 text-sm font-semibold text-saffron-700 backdrop-blur transition hover:border-saffron-600 hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold backdrop-blur transition;
+    border-color: var(--accent-soft);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--accent);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
   }
 
   .btn-whatsapp {
@@ -46,7 +228,8 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-saffron-700;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em];
+    color: var(--accent);
   }
 
   .section {
@@ -54,7 +237,8 @@
   }
 
   .ornament-divider {
-    @apply mx-auto h-[1px] w-24 bg-gradient-to-r from-transparent via-saffron-400 to-transparent;
+    @apply mx-auto h-[1px] w-24;
+    background-image: linear-gradient(to right, transparent, var(--accent), transparent);
   }
 }
 

@@ -38,18 +38,10 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Mahakali Vedic Healing Shelter"
-                width={56}
-                height={56}
-                className="rounded-full ring-1 ring-saffron-200"
+                width={192}
+                height={52}
+                className="h-24 w-auto rounded-2xl ring-1 ring-saffron-200"
               />
-              <div>
-                <div className="font-serif text-xl font-semibold text-sindoor">
-                  {site.shortName}
-                </div>
-                <div className="text-xs uppercase tracking-[0.18em] text-ink-muted">
-                  {site.tagline}
-                </div>
-              </div>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-ink-soft">
               {site.description}

@@ -39,10 +39,9 @@ export default function AboutPage() {
             A shelter built in service of <span className="text-sindoor">Maa Kali</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft text-pretty">
-            Mahakali Vedic Healing Shelter was created with a single,
-            uncompromising intention — to rectify the misunderstanding the
-            world has built around Goddess Kali, and to make Her grace
-            accessible to anyone who seeks it with sincerity.
+            Mahakali Vedic Healing Shelter was born to correct the wrong image
+            carried in the world about Goddess Kali, and to make Her grace
+            available to sincere seekers everywhere.
           </p>
         </div>
       </section>
@@ -63,38 +62,35 @@ export default function AboutPage() {
               Photography of Guru Didi Shweta Ji to be added.
             </p>
           </div>
+
           <div className="space-y-5 text-base leading-relaxed text-ink-soft">
             <p>
-              For more than a decade, Guru Didi Shweta Ji has dedicated her
-              life to the practice of Vedic spiritual healing — the slow,
-              careful work of removing what does not belong in a person&apos;s
-              life and inviting in what does.
+              Mahakali Vedic Healing Shelter Pvt. Ltd. is a spiritual healing
+              zone. Our mission is to rectify the misunderstanding created about
+              Goddess Kali, so that everyone can welcome Her into their home
+              temple without fear.
             </p>
             <p>
-              Seekers come to her from across India and from across the world
-              — Toronto, Dubai, London, Sydney, Singapore, Mauritius. Their
-              names and stories are different. The pain that brings them is
-              often the same: a marriage cracking, a child unable to sleep, a
-              business that resists every effort, a family touched by
-              something it cannot name.
+              Our services are offered globally to people who suffer with stress,
+              disappointment, relationship issues, work problems, health issues,
+              money problems, or any disturbance they suspect may be spiritual.
             </p>
             <p>
-              Guru Didi&apos;s practice is rooted in authentic Vedic ritual,
-              guided by the protective fire of Maa Kali, and carried out with
-              the tenderness only someone who has truly seen suffering can
-              offer.
+              We cure people through photographs only. Our guidance is grounded
+              in authentic Vedic remedies — mantras, pujas, chakra work and
+              ritual — performed with devotion and care.
             </p>
             <p className="font-serif text-lg italic text-sindoor-dark">
-              &ldquo;Maa Kali does not destroy. She destroys what destroys
-              you.&rdquo;
+              “We do not deal with wrong tantric practices. We are against evil
+              practices and will never support them.”
             </p>
           </div>
         </div>
       </Section>
 
       <Section
-        eyebrow="What We Stand For"
-        title="Four principles, never negotiable."
+        eyebrow="What we offer"
+        title="Authentic Vedic help for real-life problems."
         className="bg-cream-deep/40"
       >
         <div className="grid gap-6 sm:grid-cols-2">
@@ -114,25 +110,28 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Our Mission" title="Why this shelter exists.">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <p className="text-base leading-relaxed text-ink-soft">
-            Goddess Kali has been misunderstood for centuries. She has been
-            painted as fearsome, wrathful, terrifying. The truth is the
-            opposite. She is the most fiercely protective form of the Divine
-            Mother — the one who stands between Her devotees and what would
-            harm them, and refuses to let it pass.
-          </p>
-          <p className="text-base leading-relaxed text-ink-soft">
-            Our shelter exists to bring this truth into the lives of those
-            ready to receive it — through ritual, through counsel, through
-            healing, and through the patient daily work of spiritual practice.
-            We do not turn anyone away.
-          </p>
+      <Section eyebrow="Our quick services" title="Support for immediate spiritual needs.">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            "Name spelling corrections for prosperity",
+            "Signature guidance",
+            "Business card and visiting card corrections",
+            "Correct company name for prosperity",
+            "Astrological corrections with Maa Kali's vision",
+            "Vastu adjustments for home and business",
+            "Holistic healing and spiritual beauty therapy",
+            "Navratri, Diwali and Chandi Path rituals",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-3xl border border-saffron-200/60 bg-white p-6 shadow-soft"
+            >
+              <p className="text-sm leading-relaxed text-ink-soft">{item}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
-      {/* CTA */}
       <section className="section">
         <div className="container-wide">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-saffron p-8 sm:p-12 text-center shadow-glow">
@@ -140,8 +139,8 @@ export default function AboutPage() {
               Begin a conversation with Guru Didi.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-white/90">
-              Share what you are carrying. We will guide you to the right
-              practice, the right ritual, or the right next step.
+              Share your concern and we will guide you to the right ritual,
+              mantra, or next step.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a
