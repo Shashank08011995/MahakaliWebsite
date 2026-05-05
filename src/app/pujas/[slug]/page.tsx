@@ -36,7 +36,7 @@ export default async function PujaDetailPage({ params }: { params: Promise<Param
 
   return (
     <>
-      <section className="bg-gradient-cream pt-12 pb-10 sm:pt-20 sm:pb-12">
+      <section className="bg-white pt-12 pb-10 sm:pt-20 sm:pb-12">
         <div className="container-wide">
           <Link
             href="/pujas"

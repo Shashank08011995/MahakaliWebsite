@@ -5,21 +5,40 @@
 @layer base {
   :root {
     color-scheme: light;
-    --bg: #fff8f0;
+    --bg: #f9f9f9;
     --surface: #ffffff;
-    --surface-soft: #fff2e4;
-    --surface-strong: #f6e5d7;
-    --text: #2d2921;
-    --muted: #6f6459;
-    --accent: #c15f0f;
-    --accent-dark: #a94f08;
-    --accent-soft: #f7d0b1;
-    --accent-strong: #dc6f18;
-    --border: #f3d1b0;
-    --surface-rgb: 255, 248, 240;
-    --surface-soft-rgb: 251, 238, 219;
-    --accent-rgb: 193, 95, 15;
-    --border-rgb: 243, 209, 176;
+    --surface-soft: #f5f5f5;
+    --surface-strong: #e8e8e8;
+    --text: #000000;
+    --muted: #666666;
+    --accent: #d2519e;
+    --accent-dark: #b03d7f;
+    --accent-soft: #e8a3c7;
+    --accent-strong: #9ebd77;
+    --border: #cccccc;
+    --surface-rgb: 255, 255, 255;
+    --surface-soft-rgb: 245, 245, 245;
+    --accent-rgb: 210, 81, 158;
+    --border-rgb: 204, 204, 204;
+    --card: #ffffff;
+  }
+
+  .theme-saffron {
+    --bg: #f9f9f9;
+    --surface: #ffffff;
+    --surface-soft: #f5f5f5;
+    --surface-strong: #e8e8e8;
+    --text: #000000;
+    --muted: #666666;
+    --accent: #d2519e;
+    --accent-dark: #b03d7f;
+    --accent-soft: #e8a3c7;
+    --accent-strong: #9ebd77;
+    --border: #cccccc;
+    --surface-rgb: 255, 255, 255;
+    --surface-soft-rgb: 245, 245, 245;
+    --accent-rgb: 210, 81, 158;
+    --border-rgb: 204, 204, 204;
     --card: #ffffff;
   }
 
@@ -58,6 +77,25 @@
     --surface-soft-rgb: 228, 236, 255;
     --accent-rgb: 79, 70, 229;
     --border-rgb: 223, 227, 255;
+    --card: #ffffff;
+  }
+
+  .theme-mahakali {
+    --bg: #f9f9f9;
+    --surface: #ffffff;
+    --surface-soft: #f5f5f5;
+    --surface-strong: #e8e8e8;
+    --text: #000000;
+    --muted: #666666;
+    --accent: #d2519e;
+    --accent-dark: #b03d7f;
+    --accent-soft: #e8a3c7;
+    --accent-strong: #9ebd77;
+    --border: #cccccc;
+    --surface-rgb: 255, 255, 255;
+    --surface-soft-rgb: 245, 245, 245;
+    --accent-rgb: 210, 81, 158;
+    --border-rgb: 204, 204, 204;
     --card: #ffffff;
   }
 
@@ -249,5 +287,18 @@
 
   .text-pretty {
     text-wrap: pretty;
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }

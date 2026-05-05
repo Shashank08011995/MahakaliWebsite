@@ -32,7 +32,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-cream pt-16 pb-12 sm:pt-24 sm:pb-16">
+      <section className="bg-white pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="container-wide">
           <p className="font-devanagari text-sindoor">ॐ क्रीं कालिकायै नमः</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">
@@ -134,11 +134,11 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container-wide">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-saffron p-8 sm:p-12 text-center shadow-glow">
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-white text-balance">
+          <div className="relative overflow-hidden rounded-3xl bg-gray-50 p-8 sm:p-12 text-center shadow-glow">
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-ink text-balance">
               Begin a conversation with Guru Didi.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base text-white/90">
+            <p className="mx-auto mt-4 max-w-xl text-base text-ink-soft">
               Share your concern and we will guide you to the right ritual,
               mantra, or next step.
             </p>
@@ -153,7 +153,7 @@ export default function AboutPage() {
               </a>
               <a
                 href={`tel:${site.contact.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-saffron-200 bg-white px-6 py-3 text-sm font-semibold text-saffron-700 backdrop-blur transition hover:bg-cream-deep"
               >
                 Call {site.contact.phone}
               </a>

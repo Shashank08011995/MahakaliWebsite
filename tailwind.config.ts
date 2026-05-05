@@ -5,45 +5,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Spiritual palette: deep saffron, marigold, gold accents on a warm cream base.
+        // Logo-inspired palette: pink, green, black accents on a warm cream base.
         saffron: {
-          50: "#fef7ee",
-          100: "#fdecd6",
-          200: "#fad5ad",
-          300: "#f6b779",
-          400: "#f1934a",
-          500: "#ec7728",
-          600: "#dd5e1e",
-          700: "#b7461b",
-          800: "#92391e",
-          900: "#76311b",
-          950: "#40160a",
+          50: "#ffffff",
+          100: "#ffffff",
+          200: "#ffffff",
+          300: "#ffffff",
+          400: "#ffffff",
+          500: "#ffffff",
+          600: "#ffffff",
+          700: "#ffffff",
+          800: "#ffffff",
+          900: "#ffffff",
+          950: "#ffffff",
         },
         marigold: {
-          50: "#fffaeb",
-          100: "#fef0c7",
-          200: "#fde08a",
-          300: "#fcc94d",
-          400: "#fbb024",
-          500: "#f5900b",
-          600: "#d96b06",
-          700: "#b44a09",
-          800: "#92390e",
-          900: "#78300f",
-          950: "#451703",
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#9ebd77",
+          600: "#7a9a5e",
+          700: "#5f7a4b",
+          800: "#4e613e",
+          900: "#415133",
+          950: "#1f2e19",
         },
         sindoor: {
-          DEFAULT: "#a72a1f",
-          dark: "#7a1d15",
+          DEFAULT: "#d2519e",
+          dark: "#b03d7f",
         },
         ink: {
-          DEFAULT: "#2a1f1a",
-          soft: "#4a3a32",
-          muted: "#6b5a50",
+          DEFAULT: "#000000",
+          soft: "#333333",
+          muted: "#666666",
         },
         cream: {
-          DEFAULT: "#fff8f0",
-          deep: "#fbeedb",
+          DEFAULT: "#f9f9f9",
+          deep: "#e8e8e8",
         },
       },
       fontFamily: {
@@ -53,9 +53,9 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-saffron":
-          "linear-gradient(135deg, #ec7728 0%, #f5900b 50%, #fbb024 100%)",
+          "linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%)",
         "gradient-cream":
-          "linear-gradient(180deg, #fff8f0 0%, #fbeedb 100%)",
+          "#f5f5f5",
       },
       boxShadow: {
         soft: "0 6px 24px -10px rgba(167, 42, 31, 0.15)",

@@ -5,7 +5,7 @@ import { buildWhatsAppUrl, quickMessages } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-cream">
+    <section className="relative overflow-hidden bg-white">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/mahakali-devotion.png"

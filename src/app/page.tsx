@@ -132,7 +132,7 @@ export default function HomePage() {
       {/* CTA banner */}
       <section className="section">
         <div className="container-wide">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-saffron p-8 sm:p-12 lg:p-16 shadow-glow">
+          <div className="relative overflow-hidden rounded-3xl bg-gray-50 p-8 sm:p-12 lg:p-16 shadow-glow">
             <div className="absolute inset-0 opacity-10">
               <Image
                 src="/images/oum.jpg"
@@ -144,11 +144,11 @@ export default function HomePage() {
             </div>
             <div className="relative grid gap-8 lg:grid-cols-[1.4fr,1fr] lg:items-center">
               <div>
-                <p className="eyebrow text-white/80">Telephonic Consultation</p>
-                <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white text-balance">
+                <p className="eyebrow text-ink-muted">Telephonic Consultation</p>
+                <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-ink text-balance">
                   Speak directly with Guru Didi.
                 </h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90">
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft">
                   Confidential one-on-one sessions over phone or WhatsApp. Most
                   questions can be addressed in a single sitting. Longer paths
                   begin with one too.

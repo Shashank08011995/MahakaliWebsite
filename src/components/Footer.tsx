@@ -30,7 +30,7 @@ const exploreCols: { heading: string; links: { href: string; label: string }[] }
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-12 border-t border-saffron-200/50 bg-gradient-to-b from-cream to-cream-deep">
+    <footer className="mt-12 border-t border-gray-200 bg-white">
       <div className="container-wide py-14 sm:py-20">
         <div className="grid gap-10 sm:gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1 max-w-md">

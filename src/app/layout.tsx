@@ -4,6 +4,8 @@ import { site } from "@/lib/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { MantraBanner } from "@/components/MantraBanner";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -64,10 +66,12 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} ${tiro.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <MantraBanner />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <FloatingCallButton />
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function PujasPage() {
   return (
     <>
-      <section className="bg-gradient-cream pt-16 pb-12 sm:pt-24 sm:pb-16">
+      <section className="bg-white pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="container-wide max-w-3xl">
           <p className="eyebrow">Pujas &amp; Yagnaas</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">

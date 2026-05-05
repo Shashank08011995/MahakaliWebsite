@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-gradient-cream pt-16 pb-12 sm:pt-24 sm:pb-16">
+      <section className="bg-white pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="container-wide max-w-3xl">
           <p className="eyebrow">Our Services</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">
@@ -66,7 +66,7 @@ export default function ServicesPage() {
 
       <section className="section">
         <div className="container-wide">
-          <div className="rounded-3xl bg-gradient-saffron p-8 sm:p-12 text-center shadow-glow">
+          <div className="rounded-3xl bg-gray-50 p-8 sm:p-12 text-center shadow-glow">
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-white text-balance">
               Not sure where to begin?
             </h2>

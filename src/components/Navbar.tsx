@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X, Phone, Palette } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { buildWhatsAppUrl, quickMessages } from "@/lib/whatsapp";
 
@@ -24,33 +24,11 @@ const moreLinks = [
   { href: "/faqs", label: "FAQs" },
 ];
 
-type ThemeId = "saffron" | "teal" | "indigo";
-const themeOptions: Array<{ id: ThemeId; label: string; gradient: string }> = [
-  {
-    id: "saffron",
-    label: "Saffron Glow",
-    gradient: "linear-gradient(135deg, #ec7728 0%, #fbb024 45%, #fbeedb 100%)",
-  },
-  {
-    id: "teal",
-    label: "Teal Breeze",
-    gradient: "linear-gradient(135deg, #0f7c74 0%, #3da896 45%, #dffaf5 100%)",
-  },
-  {
-    id: "indigo",
-    label: "Indigo Aura",
-    gradient: "linear-gradient(135deg, #4f46e5 0%, #8b5cf6 45%, #e4ecff 100%)",
-  },
-];
-
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-  const [themeOpen, setThemeOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<ThemeId>("saffron");
   const moreRef = useRef<HTMLDivElement>(null);
-  const themeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -66,23 +44,6 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme") as ThemeId | null;
-    const initialTheme = savedTheme ?? "saffron";
-    document.documentElement.classList.add(`theme-${initialTheme}`);
-    setTheme(initialTheme);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.remove(
-      "theme-saffron",
-      "theme-teal",
-      "theme-indigo"
-    );
-    document.documentElement.classList.add(`theme-${theme}`);
-    window.localStorage.setItem("theme", theme);
-  }, [theme]);
 
   useEffect(() => {
     if (!moreOpen) return;
@@ -101,24 +62,6 @@ export function Navbar() {
       document.removeEventListener("keydown", onEsc);
     };
   }, [moreOpen]);
-
-  useEffect(() => {
-    if (!themeOpen) return;
-    const onClick = (e: MouseEvent) => {
-      if (themeRef.current && !themeRef.current.contains(e.target as Node)) {
-        setThemeOpen(false);
-      }
-    };
-    const onEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setThemeOpen(false);
-    };
-    document.addEventListener("mousedown", onClick);
-    document.addEventListener("keydown", onEsc);
-    return () => {
-      document.removeEventListener("mousedown", onClick);
-      document.removeEventListener("keydown", onEsc);
-    };
-  }, [themeOpen]);
 
   return (
     <header
@@ -185,47 +128,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3 ml-auto">
-          <div ref={themeRef} className="relative z-50">
-            <button
-              type="button"
-              onClick={() => setThemeOpen((v) => !v)}
-              aria-expanded={themeOpen}
-              aria-label="Theme selector"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/95 shadow-soft ring-1 ring-saffron-200 transition hover:shadow-glow"
-            >
-              <Palette className="h-5 w-5 text-[color:var(--accent)]" />
-            </button>
-            {themeOpen && (
-              <div className="absolute right-0 top-full z-50 mt-3 w-44 rounded-3xl border border-saffron-200/60 bg-white p-3 shadow-glow">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
-                  Choose theme
-                </p>
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  {themeOptions.map((option) => (
-                    <button
-                      key={option.id}
-                      type="button"
-                      onClick={() => {
-                        setTheme(option.id);
-                        setThemeOpen(false);
-                      }}
-                      title={option.label}
-                      className={`h-11 w-11 rounded-2xl border transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)] ${theme === option.id ? "ring-2 ring-[color:var(--surface)] ring-offset-2" : "opacity-90 hover:opacity-100"}`}
-                      style={{ background: option.gradient }}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-          <a
-            href={`tel:${site.contact.phoneRaw}`}
-            className="hidden xl:inline-flex items-center gap-2 text-sm font-medium text-ink-soft hover:text-[color:var(--accent-dark)]"
-            aria-label={`Call ${site.contact.phone}`}
-          >
-            <Phone className="h-4 w-4" />
-            {site.contact.phone}
-          </a>
           <a
             href={buildWhatsAppUrl(quickMessages.appointment)}
             target="_blank"
@@ -267,13 +169,6 @@ export function Navbar() {
             >
               Contact
             </Link>
-            <a
-              href={`tel:${site.contact.phoneRaw}`}
-              className="px-3 py-3 rounded-lg text-base font-medium text-ink hover:bg-cream-deep flex items-center gap-2"
-            >
-              <Phone className="h-4 w-4" />
-              {site.contact.phone}
-            </a>
             <a
               href={buildWhatsAppUrl(quickMessages.appointment)}
               target="_blank"
