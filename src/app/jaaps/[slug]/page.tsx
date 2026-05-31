@@ -58,13 +58,13 @@ export default async function JaapDetailPage({ params }: { params: Promise<Param
         <div className="container-wide">
           <div className="grid gap-10 lg:grid-cols-[1.4fr,1fr] lg:items-start">
             <article>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-cream-deep shadow-soft">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--accent-soft)]/30 via-cream-deep to-[var(--accent-soft)]/15 shadow-soft">
                 <Image
                   src={jaap.image}
                   alt={jaap.title}
                   fill
                   sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover"
+                  className="object-contain p-4"
                   priority
                 />
               </div>

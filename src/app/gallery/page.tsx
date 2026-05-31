@@ -1,12 +1,15 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/Section";
+import { VideoCard } from "@/components/VideoCard";
+import { Ornament } from "@/components/Ornament";
 import { videos } from "@/data/videos";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Gallery — Mahakali Vedic Healing Shelter",
+  title: "Video Gallery — Mahakali Vedic Healing Shelter",
   description:
-    "A legacy collection of spiritual videos and teachings from the Mahakali Healing Shelter.",
+    "The complete library of teachings, pujas, and devotional messages from Guru Didi Shweta Ji — playable inline.",
 };
 
 export default function GalleryPage() {
@@ -14,58 +17,75 @@ export default function GalleryPage() {
     <>
       <section className="bg-white pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="container-wide max-w-3xl">
-          <p className="eyebrow">Gallery</p>
+          <p className="font-devanagari text-sindoor">ॐ क्रीं कालिकायै नमः</p>
+          <p className="eyebrow mt-3">Gallery</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">
-            Teachings, stories, and the legacy of Maa Kali.
+            Teachings, pujas, and the living legacy of Maa Kali.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft text-pretty">
-            This page preserves the spirit of the legacy video gallery. It is a
-            work in progress as we migrate the original videos and teachings.
+            Every video below plays right here on the page — no need to leave
+            the site. Click any thumbnail to start watching. New teachings are
+            added regularly from Guru Didi Shweta Ji&apos;s channel.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-soft">
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-sindoor" />
+              {videos.length} videos in the library
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-sindoor" />
+              Updated regularly
+            </span>
+            <a
+              href={site.socials.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-sindoor hover:text-sindoor-dark"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-sindoor" />
+              Visit the YouTube channel
+            </a>
+          </div>
         </div>
       </section>
 
-      <Section
-        eyebrow="Video Gallery"
-        title="Latest teachings from our YouTube channel"
-        description="Every video below is now part of our growing spiritual library. Watch teachings, pujas, and devotional guidance from Guru Didi Shweta Ji."
-      >
+      <Section eyebrow="Video Library" title="Watch the complete collection">
+        <Ornament variant="om" className="mb-8" />
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {videos.map((video) => (
-            <article
-              key={video.id}
-              className="overflow-hidden rounded-3xl border border-saffron-200/60 bg-white shadow-soft"
-            >
-              <a
-                href={video.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <div className="relative aspect-video overflow-hidden bg-slate-100">
-                  <Image
-                    src={video.thumbnail}
-                    alt={video.title}
-                    fill
-                    className="object-cover transition duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
-                    YouTube
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-ink">
-                    {video.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {video.description}
-                  </p>
-                </div>
-              </a>
-            </article>
+          {videos.map((video, i) => (
+            <VideoCard key={video.id} video={video} priority={i < 3} />
           ))}
         </div>
       </Section>
+
+      <section className="section bg-cream-deep/40">
+        <div className="container-wide">
+          <div className="rounded-3xl border border-saffron-200/60 bg-white p-8 sm:p-12 text-center shadow-soft">
+            <Ornament variant="trishul" className="mb-6" />
+            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-sindoor text-balance">
+              Want a particular teaching covered?
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-ink-soft">
+              Suggestions for new videos — pujas, jaaps, planetary remedies,
+              live questions — are welcome. Send a note on WhatsApp and Guru
+              Didi will see it personally.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/contact" className="btn-primary">
+                Send a suggestion
+              </Link>
+              <a
+                href={site.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Subscribe on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
