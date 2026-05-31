@@ -6,6 +6,7 @@ import { Section } from "@/components/Section";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Testimonials } from "@/components/Testimonials";
 import { categoryMeta, services, type ServiceCategory } from "@/data/services";
+import { videos } from "@/data/videos";
 import { site } from "@/lib/site";
 import { buildWhatsAppUrl, quickMessages } from "@/lib/whatsapp";
 
@@ -116,6 +117,48 @@ export default function HomePage() {
               </Link>
             );
           })}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Recent Videos"
+        title="Latest teachings from our YouTube channel"
+        description="Watch short teachings, puja guidance and spiritual messages from Guru Didi Shweta Ji, directly from the channel."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {videos.slice(0, 3).map((video) => (
+            <article
+              key={video.id}
+              className="overflow-hidden rounded-3xl border border-saffron-200/60 bg-white shadow-soft"
+            >
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="relative aspect-video overflow-hidden bg-slate-100">
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    fill
+                    className="object-cover transition duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
+                    YouTube
+                  </p>
+                  <h3 className="mt-3 text-lg font-semibold text-ink">
+                    {video.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {video.description}
+                  </p>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
       </Section>
 

@@ -45,3 +45,7 @@ export const books: Book[] = [
     cover: "/images/puja-ketu.jpg",
   },
 ];
+
+export function getBookBySlug(slug: string) {
+  return books.find((book) => book.slug === slug);
+}
