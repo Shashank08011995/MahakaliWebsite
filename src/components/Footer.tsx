@@ -13,16 +13,31 @@ const exploreCols: { heading: string; links: { href: string; label: string }[] }
       { href: "/jaaps", label: "Jaaps" },
       { href: "/online-classes", label: "Online Classes" },
       { href: "/membership", label: "Membership" },
+      { href: "/products", label: "Products" },
     ],
   },
   {
     heading: "Learn",
     links: [
-      { href: "/about", label: "About Guru Didi" },
-      { href: "/testimonials", label: "Stories of Grace" },
+      { href: "/about-us", label: "About Us" },
+      { href: "/mahakali", label: "MahaKali" },
       { href: "/books", label: "Books" },
+      { href: "/stories", label: "Stories" },
       { href: "/gallery", label: "Gallery" },
       { href: "/faqs", label: "FAQs" },
+      { href: "/testimonials", label: "Testimonials" },
+      { href: "/audios", label: "Audios" },
+    ],
+  },
+  {
+    heading: "Other useful Links",
+    links: [
+      { href: "/consultation", label: "Consultation" },
+      { href: "/horoscope", label: "Horoscope" },
+      { href: "/payment-options", label: "Payment Options" },
+      { href: "/donation", label: "Donation" },
+      { href: "/womens-section", label: "Women's Section" },
+      { href: "/contact", label: "Contact" },
     ],
   },
 ];
@@ -32,8 +47,8 @@ export function Footer() {
   return (
     <footer className="mt-12 border-t border-gray-200 bg-white">
       <div className="container-wide py-14 sm:py-20">
-        <div className="grid gap-10 sm:gap-12 lg:grid-cols-4">
-          <div className="lg:col-span-1 max-w-md">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
+          <div className="min-w-0">
             <div className="flex items-center gap-3">
               <Image
                 src="/images/logo.png"
@@ -52,7 +67,7 @@ export function Footer() {
           </div>
 
           {exploreCols.map((col) => (
-            <div key={col.heading}>
+            <div key={col.heading} className="min-w-0">
               <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
                 {col.heading}
               </h4>
@@ -64,79 +79,70 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                {col.heading === "Other useful Links" && (
+                  <>
+                    <li>
+                      <a
+                        href={buildWhatsAppUrl(quickMessages.consultation)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-saffron-700"
+                      >
+                        WhatsApp Guru Didi
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={`tel:${site.contact.phoneRaw}`}
+                        className="hover:text-saffron-700"
+                      >
+                        Call {site.contact.phone}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={`mailto:${site.contact.email}`}
+                        className="hover:text-saffron-700 break-all"
+                      >
+                        {site.contact.email}
+                      </a>
+                    </li>
+                  </>
+                )}
               </ul>
+              {col.heading === "Other useful Links" && (
+                <div className="mt-5 flex items-center gap-3">
+                  <a
+                    href={site.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={site.socials.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
+                  >
+                    <Youtube className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={site.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                </div>
+              )}
             </div>
           ))}
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
-              Connect
-            </h4>
-            <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-              <li>
-                <a
-                  href={buildWhatsAppUrl(quickMessages.consultation)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-saffron-700"
-                >
-                  WhatsApp Guru Didi
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${site.contact.phoneRaw}`}
-                  className="inline-flex items-center gap-2 hover:text-saffron-700"
-                >
-                  <Phone className="h-4 w-4" />
-                  {site.contact.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="inline-flex items-center gap-2 hover:text-saffron-700 break-all"
-                >
-                  <Mail className="h-4 w-4 shrink-0" />
-                  {site.contact.email}
-                </a>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-saffron-700">
-                  Contact form
-                </Link>
-              </li>
-            </ul>
-            <div className="mt-5 flex items-center gap-3">
-              <a
-                href={site.socials.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={site.socials.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
-              >
-                <Youtube className="h-4 w-4" />
-              </a>
-              <a
-                href={site.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="rounded-full p-2 text-ink-muted hover:bg-cream-deep hover:text-saffron-700"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="ornament-divider mt-12" />

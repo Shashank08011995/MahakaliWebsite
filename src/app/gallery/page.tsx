@@ -1,5 +1,7 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
+import { videos } from "@/data/videos";
 
 export const metadata: Metadata = {
   title: "Gallery — Mahakali Vedic Healing Shelter",
@@ -23,27 +25,45 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <Section eyebrow="Video Gallery" title="A spiritual library in progress">
-        <div className="grid gap-6 sm:grid-cols-2">
-          <article className="rounded-3xl border border-saffron-200/60 bg-white p-6 shadow-soft">
-            <h2 className="font-serif text-xl font-semibold text-sindoor">
-              Legacy Video Gallery
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              The original site included a collection of video teachings and
-              spiritual talks from Mahakali Vedic Healing Shelter. We are
-              migrating those resources here so seekers can access them safely.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-saffron-200/60 bg-white p-6 shadow-soft">
-            <h2 className="font-serif text-xl font-semibold text-sindoor">
-              Need a specific teaching?
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              Contact us on WhatsApp and mention the topic you are looking for.
-              We will share the right talk or practice from our archive.
-            </p>
-          </article>
+      <Section
+        eyebrow="Video Gallery"
+        title="Latest teachings from our YouTube channel"
+        description="Every video below is now part of our growing spiritual library. Watch teachings, pujas, and devotional guidance from Guru Didi Shweta Ji."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {videos.map((video) => (
+            <article
+              key={video.id}
+              className="overflow-hidden rounded-3xl border border-saffron-200/60 bg-white shadow-soft"
+            >
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="relative aspect-video overflow-hidden bg-slate-100">
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    fill
+                    className="object-cover transition duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
+                    YouTube
+                  </p>
+                  <h3 className="mt-3 text-lg font-semibold text-ink">
+                    {video.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {video.description}
+                  </p>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
       </Section>
     </>
