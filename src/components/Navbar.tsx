@@ -182,7 +182,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden lg:flex flex-1 min-w-0 flex-wrap justify-center items-center gap-2 text-sm font-medium text-ink-soft">
+        <nav className="hidden lg:flex flex-1 min-w-0 flex-wrap justify-center items-center gap-1 text-sm text-ink">
           {navItems.map((item) => (
             <div key={item.label} className="relative">
               {item.children ? (
@@ -193,28 +193,36 @@ export function Navbar() {
                     toggleMenu(item);
                   }}
                   aria-expanded={activeMenu === item.label}
-                  className="inline-flex items-center gap-1 rounded-full px-2 py-2 text-sm font-medium text-ink-soft transition hover:text-[color:var(--accent-dark)]"
+                  className={`group inline-flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-bold tracking-tight transition hover:text-[color:var(--accent)] ${
+                    activeMenu === item.label
+                      ? "text-[color:var(--accent)] bg-[color:var(--accent-soft)]/35"
+                      : "text-ink"
+                  }`}
                 >
                   {item.label}
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform ${
+                      activeMenu === item.label ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
               ) : (
                 <Link
                   href={item.href ?? "#"}
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-1 rounded-full px-2 py-2 text-sm font-medium text-ink-soft transition hover:text-[color:var(--accent-dark)]"
+                  className="group inline-flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-bold tracking-tight text-ink transition hover:text-[color:var(--accent)]"
                 >
                   {item.label}
                 </Link>
               )}
               {item.children && activeMenu === item.label && (
-                <div className="absolute left-0 top-full z-50 mt-2 min-w-[18rem] max-h-[60vh] overflow-y-auto rounded-3xl border border-saffron-200/60 bg-white p-3 shadow-glow">
+                <div className="absolute left-0 top-full z-50 mt-2 min-w-[20rem] max-h-[65vh] overflow-y-auto rounded-3xl border border-saffron-200/60 bg-white p-3 shadow-glow">
                   {item.children.map((child) => (
                     <Link
                       key={child.href}
                       href={child.href}
                       onClick={() => setActiveMenu(null)}
-                      className="block rounded-2xl px-3 py-2 text-sm font-medium text-ink-soft transition hover:bg-cream-deep hover:text-saffron-700"
+                      className="block rounded-2xl px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-[color:var(--accent-soft)]/40 hover:text-[color:var(--accent-dark)]"
                     >
                       {child.label}
                     </Link>
@@ -255,18 +263,18 @@ export function Navbar() {
                 <Link
                   href={item.href ?? "#"}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-3 rounded-lg text-base font-medium text-ink hover:bg-cream-deep"
+                  className="block px-3 py-3 rounded-lg text-base font-bold tracking-tight text-ink hover:bg-cream-deep"
                 >
                   {item.label}
                 </Link>
                 {item.children && (
-                  <div className="space-y-1 pl-4">
+                  <div className="space-y-0.5 pl-4 border-l border-saffron-200/60">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
                         onClick={() => setOpen(false)}
-                        className="block rounded-lg px-3 py-2 text-sm font-medium text-ink-soft hover:bg-cream-deep"
+                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink-soft hover:bg-cream-deep hover:text-sindoor"
                       >
                         {child.label}
                       </Link>

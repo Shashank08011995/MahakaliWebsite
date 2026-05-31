@@ -328,6 +328,75 @@ export const services: Service[] = [
     long: "Colour is the most accessible energy correction available to us. Based on your chart and current planetary positions, we prescribe daily colour practices — wardrobe, walls, accessories — that quietly recalibrate your day.",
     image: "/images/oum.jpg",
   },
+  {
+    slug: "visiting-card-correction",
+    title: "Visiting Card Correction",
+    category: "remedies",
+    short:
+      "Designing or correcting a business card so it carries supportive, prosperous energy.",
+    long: "Your visiting card is handed to clients, partners, and strangers throughout the year — each exchange is an energy transfer. We review the card's layout, fonts, colour, and number sequences and prescribe small corrections that strengthen the prosperity carried with every handshake.",
+    image: "/images/LAXMI.jpg",
+  },
+
+  // Growth — additional
+  {
+    slug: "celebrity-growth",
+    title: "Celebrity Growth",
+    category: "growth",
+    short:
+      "Spiritual remedies for public figures — actors, musicians, athletes, and performers.",
+    long: "Public life amplifies every energy you carry. We work with performers, artists, and athletes to clear the envy and projection that fame attracts, and to strengthen the planetary placements that support visibility, longevity, and clean public reputation.",
+    image: "/images/durga.jpg",
+  },
+
+  // Solutions — additional
+  {
+    slug: "astrological-problems",
+    title: "Astrological Problems",
+    category: "solutions",
+    short:
+      "Remedies for difficult planetary placements — Sade Sati, Mahadasha, Rahu-Ketu axis.",
+    long: "Some problems are not really problems — they are planetary phases. Sade Sati, an unfavourable Mahadasha, or a tight Rahu-Ketu axis can pull every area of life down at once. We diagnose the underlying planetary pattern and prescribe targeted pujas, jaaps, and personal practices to soften the period.",
+    image: "/images/puja-nav-grah.jpg",
+  },
+  {
+    slug: "suicidal-help",
+    title: "Suicidal Help",
+    category: "solutions",
+    short:
+      "Urgent spiritual support — alongside professional mental health care — for those in crisis.",
+    long: "If you or someone close is in crisis, please reach a qualified mental-health professional and crisis line first — they save lives. Our role is to come alongside that care: gentle Maha Mrityunjaya jaap, protective rituals, and confidential listening to support recovery. Spiritual help complements medical help — it never replaces it.",
+    image: "/images/puja-maha-mrityunjaya.jpg",
+  },
+  {
+    slug: "good-marriage",
+    title: "Good Marriage Remedies",
+    category: "solutions",
+    short:
+      "For those whose marriage is delayed despite proposals, alliances, and effort.",
+    long: "Distinct from solving the problems of an existing marriage, this work is for those whose marriage simply isn&apos;t happening — proposals fall through, alliances stall, or no suitable match arrives. We analyse the marriage houses in your chart, the planetary obstructions, and prescribe specific Vedic remedies to clear the way.",
+    image: "/images/LAXMI.jpg",
+  },
+  {
+    slug: "love-compatibility",
+    title: "Love Compatibility Reading",
+    category: "solutions",
+    short:
+      "Vedic compatibility analysis for couples considering marriage or a serious commitment.",
+    long: "Before two lives merge, it is wise to know what their charts say. We perform a complete Guna Milan and synastry reading — covering mental, emotional, financial, and karmic compatibility — and offer remedies for whichever areas show stress, so the commitment is entered with eyes open.",
+    image: "/images/mata-trinity.jpg",
+  },
+
+  // Spiritual — additional
+  {
+    slug: "spiritual-guidance-corporate",
+    title: "Spiritual Guidance for Corporate Houses",
+    category: "spiritual",
+    short:
+      "Confidential spiritual consultancy for SMEs and large corporate houses.",
+    long: "We work confidentially with founders, family-owned businesses, and corporate houses — small and large — on the spiritual side of enterprise: ownership disputes, succession blocks, sudden stagnation, hidden sabotage, and the energetic health of office premises. Engagements are bespoke and held in absolute confidence.",
+    image: "/images/bannerspiritualguidanceC.jpg",
+  },
 ];
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {

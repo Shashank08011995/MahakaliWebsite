@@ -50,13 +50,13 @@ export default async function StoryDetailPage({ params }: { params: Promise<Para
       <section className="section">
         <div className="container-wide grid gap-10 lg:grid-cols-[1.4fr,1fr] lg:items-start">
           <article>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-cream-deep shadow-soft">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--accent-soft)]/30 via-cream-deep to-[var(--accent-soft)]/15 shadow-soft">
               <Image
                 src={story.image}
                 alt={story.title}
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
             <div className="mt-8 space-y-6 text-ink-soft leading-relaxed prose prose-lg">
