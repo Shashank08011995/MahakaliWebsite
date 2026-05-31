@@ -13,7 +13,7 @@ export default function WomensSectionPage() {
     <>
       <section className="bg-white pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="container-wide max-w-3xl">
-          <p className="eyebrow">Women's Section</p>
+          <p className="eyebrow">Women&apos;s Section</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">
             Support for women survivors of spiritual exploitation.
           </h1>

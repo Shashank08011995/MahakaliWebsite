@@ -18,7 +18,7 @@ export default function AudiosPage() {
             Audio teachings, victim testimonials, and devotional mantras.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft text-pretty">
-            Explore recorded sessions, meditation mantras, and survivor stories that reflect the healing power of Mahakali's shelter.
+            Explore recorded sessions, meditation mantras, and survivor stories that reflect the healing power of Mahakali&apos;s shelter.
           </p>
         </div>
       </section>

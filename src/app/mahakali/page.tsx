@@ -45,7 +45,7 @@ export default function MahakaliLandingPage() {
                 {page.label}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                Read more about {page.label.toLowerCase()} and Maa Kali's shelter.
+                Read more about {page.label.toLowerCase()} and Maa Kali&apos;s shelter.
               </p>
             </Link>
           ))}

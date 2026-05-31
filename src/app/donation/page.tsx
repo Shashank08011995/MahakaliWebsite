@@ -40,7 +40,7 @@ export default function DonationPage() {
           <div className="rounded-3xl border border-saffron-200/60 bg-white p-7 shadow-soft">
             <p className="font-serif text-xl font-semibold text-sindoor">Outreach</p>
             <p className="mt-3 text-ink-soft leading-relaxed">
-              Donations also support educational outreach and the shelter's efforts to share authentic Vedic healing practices safely.
+              Donations also support educational outreach and the shelter&apos;s efforts to share authentic Vedic healing practices safely.
             </p>
           </div>
         </div>

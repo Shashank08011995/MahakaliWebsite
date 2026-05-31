@@ -17,7 +17,7 @@ export default function CompanyPage() {
             Mahakali Vedic Healing Shelter Pvt. Ltd.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft text-pretty">
-            We are a spiritual healing shelter dedicated to bringing Maa Kali's
+            We are a spiritual healing shelter dedicated to bringing Maa Kali&apos;s
             grace and protection to seekers around the world. Our company is
             built on devotion, authenticity and service.
           </p>

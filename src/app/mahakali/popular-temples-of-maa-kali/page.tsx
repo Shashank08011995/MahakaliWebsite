@@ -14,7 +14,7 @@ export default function PopularTemplesPage() {
         <div className="container-wide max-w-3xl">
           <p className="eyebrow">Popular Temples of Maa Kali</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance">
-            Sacred places where Maa Kali's energy is especially strong.
+            Sacred places where Maa Kali&apos;s energy is especially strong.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft text-pretty">
             These temples are known for their devotion, miracles, and the powerful

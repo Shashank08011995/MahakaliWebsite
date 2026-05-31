@@ -28,7 +28,7 @@ export default function FranchiseVolunteerPage() {
           <div className="rounded-3xl border border-saffron-200/60 bg-white p-7 shadow-soft">
             <h2 className="font-serif text-2xl font-semibold text-sindoor">Franchise</h2>
             <p className="mt-4 text-ink-soft leading-relaxed">
-              Expand the shelter's reach to new communities while preserving our
+              Expand the shelter&apos;s reach to new communities while preserving our
               spiritual standards and service principles.
             </p>
           </div>
